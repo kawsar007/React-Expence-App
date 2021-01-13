@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import AddTransection from './Components/AddTransection';
+import Balance from './Components/Balance';
+import Header from './Components/Header';
+import IncomeExpence from './Components/IncomeExpence';
+import Navbar from './Components/Navbar';
+import TransectionList from './Components/TransectionList';
+
+import { GlobalProvider } from './Context/GlobalState';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+          <Navbar/>
+          <Header/>
+          <div className="container">
+          <Balance/>
+          <IncomeExpence/>
+          <TransectionList/>
+          <AddTransection/>
+          </div>
+    </GlobalProvider>
   );
 }
 
